@@ -14,7 +14,10 @@
     <app-product
       *ngFor="let product of products"
       [data]="product"
-      class="column">
+      class="column"
+      (clickDetalleProducto)="VerDetalleProducto($event)"
+
+      >
     </app-product>
   </div>
   <div *ngIf="products?.length === 0" class="text-center">

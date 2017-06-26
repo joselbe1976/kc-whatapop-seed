@@ -1,12 +1,7 @@
 <div *ngIf="data">
   <img [src]="data.photo" class="thumbnail" />
 
-  <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-  | Green Path                                                       |
-  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-  | Un clic en el botón de compra debería enviar un evento al        |
-  | componente padre.                                                |
-  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
   | Purple Path                                                      |
@@ -19,7 +14,8 @@
   <button
     class="button expanded"
     [class.success]="data.state === 'selling'"
-    [class.secondary]="data.state === 'sold'">
+    [class.secondary]="data.state === 'sold'"
+    (click)="DetalleProducto(data)">
       <span *ngIf="data.state === 'selling'">
         Comprar por {{ data.price }} €
       </span>
@@ -28,3 +24,5 @@
       </span>
     </button>
 </div>
+
+
