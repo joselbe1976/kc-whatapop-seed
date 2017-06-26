@@ -1,5 +1,14 @@
 # angular4-mobile-test-directions
 
+
+**Jose Luis Bustos Esteban
+
+Ruta Verde OK
+Ruta Azul OK
+Ruta Rosa ... En curso...
+
+
+
 **Whatapop** es un _amago_ de clon de [Wallapop](http://es.wallapop.com). Sus pretensiones son mucho más humildes que las del conocido portal, pero a la vez contribuyen a una grandiosa causa: que aprendas a familiarizarte con HTML5, CSS3 y Angular.
 
 Lee detenidamente estas instrucciones **hasta el final**, las vas a necesitar para completar la práctica.
