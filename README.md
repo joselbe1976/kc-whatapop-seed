@@ -3,9 +3,10 @@
 
 **Jose Luis Bustos Esteban
 
-Ruta Verde OK
-Ruta Azul OK
-Ruta Rosa ... En curso...
+### Todos los Paths Obligatorios
+###  Opcionales Path:
+##     Broken White Path  
+   
 
 
 

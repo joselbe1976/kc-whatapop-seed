@@ -40,6 +40,7 @@
       Comprar por {{ product.price | number:'1.2-2'}} €
     </button>
     <button (click)="goBack()" class="warning button expanded">Volver</button>
+    <app-loves [product]="product"></app-loves>
   </div>
   <!-- Confirmation alert -->
   <p-confirmDialog header="Confirmación de compra" width="625" #cd></p-confirmDialog>

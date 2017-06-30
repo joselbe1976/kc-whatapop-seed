@@ -23,6 +23,7 @@ import { UserService } from './user.service';
 
 import { PublicationDatePipe } from './publication-date.pipe';
 import { FormatCurrencyPipe } from './format-currency.pipe';
+import { LovesComponent } from './loves/loves.component';
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path                                                        |
@@ -40,7 +41,8 @@ import { FormatCurrencyPipe } from './format-currency.pipe';
     ProductsCollectionComponent,
     UserProfileComponent,
     PublicationDatePipe,
-    FormatCurrencyPipe
+    FormatCurrencyPipe,
+    LovesComponent
   ],
   imports: [
     BrowserModule,
