@@ -18,12 +18,18 @@ export class ProductFilterComponent implements OnDestroy, OnInit {
   categories: Category[];
   private _categoriesSubscription: Subscription;
 
-  constructor(private _categoryService: CategoryService) { }
+  constructor(private _categoryService: CategoryService) {
+  }
 
   ngOnInit(): void {
     this._categoriesSubscription = this._categoryService
       .getCategories()
       .subscribe((data: Category[]) => this.categories = data);
+
+      // inicializamos los Filtros por defecto
+      this.productFilter.state = '';
+      this.productFilter.orden = '';
+
   }
 
   ngOnDestroy(): void {

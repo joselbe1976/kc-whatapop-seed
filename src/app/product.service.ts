@@ -17,6 +17,7 @@ export class ProductService {
   getProducts(filter: ProductFilter = undefined): Observable<Product[]> {
 
 
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Pink Path                                                        |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
@@ -46,13 +47,13 @@ export class ProductService {
 
      if (filter !== null)
      {
-       //si viene filtro por texto
+       // si viene filtro por texto
        if (filter.text !== undefined) {
           applyFilter = applyFilter.concat('q=',filter.text);
           hayText = true;
        }
 
-       //miramos si viene filtro por categoria
+       // miramos si viene filtro por categoria
 
       if (filter.category !== undefined) {
         //si se mete filtro texto, alñadimos el AND (&)
@@ -83,19 +84,53 @@ export class ProductService {
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
      if (filter.state !== undefined) {
-         //si se mete filtro texto o de categoriasalñadimos el AND (&)
-        if (hayCategory || hayText){
-          applyFilter = applyFilter.concat('&');
-        }
-        applyFilter = applyFilter.concat('state=',filter.state);
+       if (filter.state !== '') {
+            // si se mete filtro texto o de categoriasalñadimos el AND (&)
+            if (hayCategory || hayText){
+              applyFilter = applyFilter.concat('&');
+            }
+            applyFilter = applyFilter.concat('state=', filter.state);
+       }
 
+     }
+
+     // Filtro por Precios
+
+     if (filter.precioMini !== undefined) {
+        if (filter.precioMini !== '') {
+            applyFilter = applyFilter.concat('&price_gte=' , filter.precioMini.replace(',', '.'));
+        }
+     }
+     if (filter.precioMax !== undefined) {
+        if (filter.precioMax !== '') {
+            applyFilter = applyFilter.concat('&price_lte=' , filter.precioMax.replace(',', '.'));
+        }
+     }
+
+
+     // Ordenacion, debe ser siempre lo Ultimo
+    if (filter.orden !== undefined){
+        if (filter.orden !== '') {
+
+          switch (filter.orden) {
+            case 'tituloP' :
+              applyFilter = applyFilter.concat('&_sort=' , 'name&_order=ASC');
+              break;
+            case 'precioP' :
+              applyFilter = applyFilter.concat('&_sort=' , 'price&_order=ASC');
+              break;
+            case 'publicP' :
+              applyFilter = applyFilter.concat('&_sort=' , 'publishedDate&_order=DESC');
+              break;
+          }
+        }
      }
 
     }
 
 
     return this._http
-      .get(`${this._backendUri}/products?${applyFilter}&_sort=publishedDate&_order=DESC`)
+      .get(`${this._backendUri}/products?${applyFilter}`)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
   }
 

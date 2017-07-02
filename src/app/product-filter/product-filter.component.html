@@ -1,13 +1,52 @@
 <div>
+  <h3>Opciones de búsqueda y ordenación</h3>
   <div class="row">
+
+
     <div class="small-6 medium-2 large-3 columns">
-      <input [(ngModel)]="productFilter.text" type="text" placeholder="Pe. Uncharted">
+      <label for="titF">Titulo</label>
+      <input id = "titF" [(ngModel)]="productFilter.text" type="text" placeholder="Pe. Uncharted">
     </div>
     <div class="small-6 medium-2 large-3 columns">
-      <select [(ngModel)]="productFilter.category">
-        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+       <label for="catF">Categoria</label>
+       <select id = "catF" [(ngModel)]="productFilter.category">
+        <option  *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
       </select>
     </div>
+
+    <div class="small-6 medium-2 large-2 columns">
+      <label for="stateP">Estado</label>
+      <select id="statP" [(ngModel)]="productFilter.state">
+        <option value="" selected>Todos</option>
+        <option value="selling">En proceso de venta</option>
+        <option value="sold">Ya vendidos</option>
+
+      </select>
+    </div>
+
+    <div class="small-6 medium-2 large-1 columns">
+      <label for = "preciM">P.Minimo</label>
+      <input id = "preciM" [(ngModel)]="productFilter.precioMini" type="text" placeholder="Precio minimo">
+    </div>
+
+    <div class="small-6 medium-2 large-1 columns">
+      <label for ="preciMax">P.Maximo</label>
+      <input id = "preciMax" [(ngModel)]="productFilter.precioMax" type="text" placeholder="Precio maximo">
+    </div>
+
+
+    <div class="small-6 medium-2 large-2 columns">
+      <label for="sortP">Ordena por...</label>
+      <select  id = "sortP" [(ngModel)]="productFilter.orden">
+        <option value="" selected>Sin orden</option>
+        <option value="tituloP">Titulo</option>
+        <option value="precioP">Precio</option>
+        <option value="publicP">Fecha</option>
+
+      </select>
+    </div>
+
+
     <div class="small-12 medium-3 large-2 columns">
       <button (click)="notifyHost()" class="button expanded">Buscar</button>
     </div>

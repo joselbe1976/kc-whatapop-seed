@@ -1,5 +1,15 @@
-<button  (click)="execClick()" class="button expanded">
-  <img src='../../assets/images/corazon.png' width='50px'>
-  {{ isFavorito == true ? "Me gusta!!!!" : "Ya no me gusta" }}
-</button>
+
+  <!-- Evaluacmos si esta añadido favoritos o no con ngIf directiva -->
+  <div *ngIf="isFavorito == true" class="small-up-2 medium-up-4 large-up-6">
+    <button  (click)="execClick()" class="button expanded buttonDelete">
+        <img src='../../assets/images/corazon.png' width='40px'> Eliminar de Favoritos
+    </button>
+  </div>
+  <div *ngIf="isFavorito == false" class="small-up-2 medium-up-4 large-up-6">
+    <button  (click)="execClick()" class="button expanded buttonAdd">
+        Añadir a Favoritos
+    </button>
+  </div>
+
+
 
