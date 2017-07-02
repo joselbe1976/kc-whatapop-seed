@@ -15,6 +15,8 @@ export class LovesComponent implements OnInit {
 
   constructor( ) { }
 
+
+
   ngOnInit() {
 
       if (localStorage.getItem(this.product.id.toString()) == null) {

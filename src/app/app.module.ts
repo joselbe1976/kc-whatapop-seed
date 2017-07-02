@@ -25,11 +25,7 @@ import { PublicationDatePipe } from './publication-date.pipe';
 import { FormatCurrencyPipe } from './format-currency.pipe';
 import { LovesComponent } from './loves/loves.component';
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path                                                        |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| No olvides declarar PublicationDatePipe en el módulo.            |
-|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 
 @NgModule({
   declarations: [
