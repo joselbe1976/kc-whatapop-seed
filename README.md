@@ -4,8 +4,7 @@
 
 ## Mail noticiación practica : jlbustos@equilibrha.es 
 
-
-##Trabajo realizado en la practica:
+## Trabajo realizado en la practica:
 
   - Todos los Paths Obligatorios
   - Broken White Path  
